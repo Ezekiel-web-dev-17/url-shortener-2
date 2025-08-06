@@ -7,8 +7,21 @@ const Hero = () => {
         <img src={illustrationWorking} alt="illustration-working svg" />
       </div>
       <div className="hero-text text-sm-start">
-        <h1>More than just shorter links</h1>
-        <p className="lead building fw-normal mt-4 mt-sm-0">
+        <h1> More than just shorter links</h1>
+        <p
+          className="lead building text-center text-sm-start fw-normal mt-4 mt-sm-0"
+          style={{
+            paddingInline: `${
+              window.innerWidth === 375
+                ? "0 2rem"
+                : window.innerWidth < 376
+                ? "1.5rem"
+                : window.innerWidth >= 376 && window.innerWidth <= 1024
+                ? "0 2.5rem"
+                : "0 7.51rem"
+            }`,
+          }}
+        >
           Build your brand's recognition and get detailed insights on how your
           links are performing.
         </p>

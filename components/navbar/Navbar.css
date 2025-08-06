@@ -21,13 +21,6 @@
   color: var(--Grayish-Violet);
 }
 
-.link-all li:hover,
-.login:hover {
-  color: var(--Very-Dark-Violet);
-  opacity: 1;
-  cursor: pointer;
-}
-
 @keyframes show {
   from {
     opacity: 0;

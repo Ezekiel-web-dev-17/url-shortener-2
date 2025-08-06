@@ -27,7 +27,7 @@ const Navbar = () => {
       <nav className="navbar d-flex justify-content-between align-items-center mx-sm-5">
         <img src={logo} height="35px" alt="logo" />
 
-        {window.innerWidth < 768 ? (
+        {window.innerWidth < 376 ? (
           <>
             <div
               className="nav-links flex-column justify-content-between align-items-center text-white fw-bold position-absolute rounded-3 fs-4 pb-4 pt-5 gap-3 px-4"
@@ -40,21 +40,32 @@ const Navbar = () => {
               }}
             >
               <ul className="d-flex flex-column text-center list-unstyled gap-4 fs-5">
-                <li className="fw-bold">Features</li>
-                <li className="fw-bold">Pricing</li>
-                <li className="fw-bold">Resources</li>
+                <li className="fw-bold opacity-50">Features</li>
+                <li className="fw-bold opacity-50">Pricing</li>
+                <li className="fw-bold opacity-50">Resources</li>
               </ul>
 
               <div
-                className="flex-column d-flex w-100 gap-2 pt-3"
+                className="flex-column d-flex w-100 gap-2 pt-3 opacity-50"
                 style={{
                   borderTop: "2px solid var(--Grayish-Violet)",
                 }}
               >
-                <button className="bg-transparent rounded-2 mb-0 text white fw-bold fs-5 text-white border-0">
+                <button
+                  className="login rounded-2 mb-0 border-0 bg-transparent opacity-100"
+                  disabled={true}
+                  style={{
+                    cursor: "auto",
+                    filter: "unset",
+                    color: "white",
+                  }}
+                >
                   Login
                 </button>
-                <button className=" rounded-5 mb-3 fw-bold fs-5 text-white border-0 py-2">
+                <button
+                  className=" rounded-5 mb-3 fw-bold fs-5 text-white border-0 py-2"
+                  style={{ cursor: "unset", filter: "unset" }}
+                >
                   Sign Up
                 </button>
               </div>
@@ -85,16 +96,27 @@ const Navbar = () => {
         ) : (
           <div className="links d-flex justify-content-between align-items-center gap-5">
             <ul className="link-all d-flex list-unstyled gap-5 mb-0">
-              <li>Features</li>
-              <li>Pricing</li>
-              <li>Resources</li>
+              <li className=" opacity-50">Features</li>
+              <li className=" opacity-50">Pricing</li>
+              <li className=" opacity-50">Resources</li>
             </ul>
 
-            <div className="flex-column d-flex flex-sm-row gap-3">
-              <button className="login rounded-2 mb-0 border-0 bg-transparent">
+            <div className="flex-column d-flex flex-sm-row gap-3 opacity-50">
+              <button
+                className="login rounded-2 mb-0 border-0 bg-transparent"
+                disabled={true}
+                style={{
+                  cursor: "auto",
+                  color: "var(--Grayish-Violet)",
+                  filter: "unset",
+                }}
+              >
                 Login
               </button>
-              <button className=" rounded-5 mb-0 text-white fw-medium border-0 px-3 py-1">
+              <button
+                className=" rounded-5 mb-0 text-white fw-medium border-0 px-3 py-1"
+                style={{ cursor: "unset", filter: "unset" }}
+              >
                 Sign Up
               </button>
             </div>

@@ -31,7 +31,7 @@ const History = ({ his }) => {
       <div
         className="px-4 pt-2  pt-sm-0 fs-6 fw-bolder d-sm-flex flex-sm-row gap-sm-5 align-items-sm-center"
         style={{
-          borderTop: `${window.innerWidth < 768 ? "1px solid #aaa" : "0"}`,
+          borderTop: `${window.innerWidth < 376 ? "1px solid #aaa" : "0"}`,
         }}
       >
         <a href={`${his.short}`} target="_blank">
@@ -40,7 +40,7 @@ const History = ({ his }) => {
         <button
           className="mt-sm-0 mt-3 text-white border-0 rounded-2 fw-bold py-1 fs-5"
           style={{
-            width: `${window.innerWidth < 768 ? "100%" : "auto-fit"}`,
+            width: `${window.innerWidth < 376 ? "100%" : "auto-fit"}`,
           }}
           onClick={(e) => {
             copyToClipboard(e, his.short);

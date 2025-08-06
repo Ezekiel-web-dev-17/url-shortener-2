@@ -1,7 +1,7 @@
 footer {
   display: flex;
   justify-content: space-between;
-  padding-inline: 180px;
+  padding-inline: 160px;
   background: var(--Very-Dark-Violet);
 }
 
@@ -27,18 +27,4 @@ footer li:nth-child(1) {
 footer div {
   display: flex;
   gap: 25px;
-}
-
-footer li:hover,
-footer img:hover {
-  color: var(--Cyan);
-  cursor: pointer;
-}
-
-.facebook:hover path,
-.twitter-icon:hover path,
-.pintrest-icon:hover path,
-.instagram:hover path {
-  fill: var(--Cyan);
-  cursor: pointer;
 }

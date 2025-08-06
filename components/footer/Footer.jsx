@@ -3,22 +3,25 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className=" align-items-center align-items-sm-start">
+    <footer
+      className=" align-items-center align-items-sm-start"
+      style={{ maxWidth: `${window.innerWidth}px`, width: "100%" }}
+    >
       <img className="mb-5" src={whiteLogo} alt="" />
 
-      <ul>
+      <ul className="opacity-50" aria-disabled="true">
         <li>Features</li>
         <li>Link Shortening</li>
         <li>Branded Links</li>
         <li>Analytics</li>
       </ul>
-      <ul>
+      <ul className="opacity-50" aria-disabled="true">
         <li>Resources</li>
         <li>Blog</li>
         <li>Developers</li>
         <li>Support</li>
       </ul>
-      <ul>
+      <ul className="opacity-50" aria-disabled="true">
         <li>Company</li>
         <li>About</li>
         <li>Our Team</li>
@@ -26,7 +29,7 @@ const Footer = () => {
         <li>Contact</li>
       </ul>
 
-      <div>
+      <div className=" opacity-50" aria-disabled="true">
         <svg
           className="facebook"
           xmlns="http://www.w3.org/2000/svg"

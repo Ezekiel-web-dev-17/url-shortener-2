@@ -36,6 +36,15 @@ const Shorten = () => {
           saveUrls(data);
         });
 
+      // await axios
+      //   .post("https://cleanuri.com/api/v1/shorten", {
+      //     url: `${longUrl.startsWith("www.") ? `https://${longUrl}` : longUrl}`,
+      //   })
+      //   .then((res) => {
+      //     const data = res.data;
+      //     saveUrls(data);
+      //   });
+
       setLongUrl("");
       setBtnContent("Shorten It!");
     } catch (error) {
@@ -101,7 +110,7 @@ const Shorten = () => {
           style={{
             backgroundColor: "var(--Cyan)",
             fontFamily: "Poppins, sans-serif",
-            width: `${window.innerWidth <= 768 ? "100%" : "25%"}`,
+            width: `${window.innerWidth <= 376 ? "100%" : "25%"}`,
           }}
         >
           {btnContent}
