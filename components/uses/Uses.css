@@ -1,0 +1,46 @@
+.uses {
+  display: flex;
+  gap: 25px;
+  text-align: start;
+  margin-top: 140px;
+  margin-bottom: 120px;
+  position: absolute;
+  top: 190px;
+  z-index: 2;
+}
+
+.uses div {
+  border-radius: 10px;
+  padding: 70px 30px 35px;
+  background: #fff;
+  position: relative;
+}
+
+.uses div:nth-child(2) {
+  top: 50px;
+}
+
+.uses div:nth-child(3) {
+  top: 100px;
+}
+
+.uses img {
+  position: absolute;
+  top: -30px;
+  width: 70px;
+  overflow: visible;
+  padding: 18px;
+  background: var(--Very-Dark-Violet);
+  border-radius: 50%;
+}
+
+.uses h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.uses p {
+  line-height: 25px;
+  text-wrap: pretty;
+  opacity: 0.5;
+}

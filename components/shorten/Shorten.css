@@ -1,0 +1,9 @@
+.shorten {
+  position: relative;
+  top: -25%;
+  z-index: 3;
+}
+
+.empty::placeholder {
+  color: rgb(235, 61, 61);
+}

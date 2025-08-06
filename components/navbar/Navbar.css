@@ -1,0 +1,42 @@
+.active {
+  animation: show 0.3s ease-in-out forwards;
+}
+
+.navbar {
+  padding: 1.5rem;
+  font-family: poppins, sans-serif;
+}
+
+.nav-links {
+  display: none;
+}
+
+.links {
+  width: 80%;
+}
+
+.link-all,
+.login {
+  font-weight: 700;
+  color: var(--Grayish-Violet);
+}
+
+.link-all li:hover,
+.login:hover {
+  color: var(--Very-Dark-Violet);
+  opacity: 1;
+  cursor: pointer;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+    display: none;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    display: flex;
+  }
+}
