@@ -194,6 +194,10 @@ footer {
     width: 28%;
   }
 
+  .rule {
+    margin-inline: 4rem;
+  }
+
   .track {
     max-width: 60%;
   }

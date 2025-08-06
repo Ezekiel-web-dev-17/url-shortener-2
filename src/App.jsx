@@ -90,7 +90,7 @@ function App() {
             statistics dashboard.
           </p>
 
-          <hr className=" opacity-100" style={{ marginInline: "4rem" }} />
+          <hr className="rule opacity-100" />
 
           <Uses />
         </section>
