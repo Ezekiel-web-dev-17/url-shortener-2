@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import "./Shorten.css";
 import axios from "axios";
 
-const Shorten = () => {
+const Shorten = ({ setHistory }) => {
   const [longUrl, setLongUrl] = useState("");
   const [errorResponse, setErrorResponse] = useState("");
   const [btnContent, setBtnContent] = useState("Shorten It!");
@@ -56,6 +56,7 @@ const Shorten = () => {
     const existing = JSON.parse(localStorage.getItem("history") || "[]");
     existing.push(newEntry);
     localStorage.setItem("history", JSON.stringify(existing));
+    setHistory(JSON.parse(localStorage.getItem("history")));
   }
 
   if (errorResponse === "Please add a link" && inputRef.current) {

@@ -9,9 +9,12 @@ import Hero from "../components/Hero";
 import History from "../components/History";
 import Uses from "../components/uses/Uses";
 import Footer from "../components/footer/Footer";
+import { useState } from "react";
 
 function App() {
-  const history = JSON.parse(localStorage.getItem("history"));
+  const [history, setHistory] = useState(
+    JSON.parse(localStorage.getItem("history"))
+  );
 
   const clearHistoryWithConfirm = () => {
     toast(
@@ -26,6 +29,7 @@ function App() {
                 localStorage.clear();
                 toast.dismiss(t.id);
                 toast.success("Past URLs deleted successfully.");
+                setHistory("");
               }}
               className=" bg-danger text-white px-3 py-1 rounded border-0"
             >
@@ -52,7 +56,7 @@ function App() {
       <main>
         <section className="responses position-relative">
           <div className="short-bg position-absolute p-3 py-4 px-sm-5">
-            <Shorten />
+            <Shorten setHistory={setHistory} />
             <img
               className="short-bg-mobile"
               src={shortMobile}
