@@ -28,8 +28,8 @@ const History = ({ his }) => {
   return (
     <div className="shortened-url link-item bg-white w-100 py-3 rounded-3 text-start gap-0">
       <p className="px-4 fs-6 fw-bolder mb-sm-0">
-        {window.innerWidth < 1208 && his.original.length > 28
-          ? `${his.original.slice(0, 28)}...`
+        {window.innerWidth < 820 && his.original.length > 20
+          ? `${his.original.slice(0, 20)}...`
           : his.original.slice(0, 85)}
       </p>
       <div
