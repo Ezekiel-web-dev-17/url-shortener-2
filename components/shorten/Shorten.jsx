@@ -2,22 +2,47 @@ import { useRef, useState } from "react";
 import "./Shorten.css";
 import axios from "axios";
 
+function isValidUrl(httpUrl) {
+  try {
+    if (httpUrl.length < 1) return false;
+    const url = new URL(httpUrl); // will throw if invalid
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch (err) {
+    if (err) return false;
+  }
+}
+
 const Shorten = ({ setHistory }) => {
   const [longUrl, setLongUrl] = useState("");
   const [errorResponse, setErrorResponse] = useState("");
   const [btnContent, setBtnContent] = useState("Shorten It!");
   const inputRef = useRef(null);
+
+  function saveUrls(data) {
+    const newEntry = {
+      id: Date.now(),
+      original: longUrl,
+      short: data,
+    };
+    const existing = JSON.parse(localStorage.getItem("history") || "[]");
+    existing.push(newEntry);
+    localStorage.setItem("history", JSON.stringify(existing));
+    setHistory(JSON.parse(localStorage.getItem("history")));
+  }
+
   async function shortenUrl(longUrl) {
     try {
       // Show loading state
       setBtnContent("Shortening...");
 
+      const httpUrl = longUrl.startsWith("www.")
+        ? `https://${longUrl}`
+        : longUrl;
       // Test URL Properties
-      if (longUrl.length <= 1) throw Error("Please add a link"); // for empty input
-      if (longUrl.includes("https://tinyurl.com"))
+      if (!longUrl.trim()) throw Error("Please add a link");
+      if (!isValidUrl(httpUrl)) throw Error("Invalid Url.");
+      if (longUrl.startsWith("https://tinyurl.com"))
         throw Error("Don't try to shorten a shortened URL."); // Previously Shortened URLs
-      if (!longUrl.startsWith("http") && !longUrl.startsWith("www."))
-        throw Error("Invalid Url."); // Url does not start with www. or http
 
       // To prevent shortening a Url previously shortened or currently stored.
       const local = JSON.parse(localStorage.getItem("history") || "[]");
@@ -28,7 +53,7 @@ const Shorten = ({ setHistory }) => {
       await axios
         .get(
           `https://tinyurl.com/api-create.php?url=${encodeURIComponent(
-            longUrl.startsWith("www.") ? `https://${longUrl}` : longUrl
+            httpUrl
           )}`
         )
         .then((res) => {
@@ -47,21 +72,9 @@ const Shorten = ({ setHistory }) => {
     }
   }
 
-  function saveUrls(data) {
-    const newEntry = {
-      id: Date.now(),
-      original: longUrl,
-      short: data,
-    };
-    const existing = JSON.parse(localStorage.getItem("history") || "[]");
-    existing.push(newEntry);
-    localStorage.setItem("history", JSON.stringify(existing));
-    setHistory(JSON.parse(localStorage.getItem("history")));
-  }
-
   if (errorResponse === "Please add a link" && inputRef.current) {
     // Add the red border
-    inputRef.current.style.border = "3px solid red";
+    inputRef.current.style.border = "3px solid var(--Red)";
 
     inputRef.current.classList.add("empty");
 
