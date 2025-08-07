@@ -7,7 +7,7 @@ const Footer = () => {
       className=" align-items-center align-items-sm-start"
       style={{ maxWidth: `${window.innerWidth}px`, width: "100%" }}
     >
-      <img className="mb-5" src={whiteLogo} alt="" />
+      <img className="mb-5 me-lg-5 pe-lg-5" src={whiteLogo} alt="" />
 
       <ul className="opacity-50" aria-disabled="true">
         <li>Features</li>

@@ -27,11 +27,15 @@ const History = ({ his }) => {
   }
   return (
     <div className="shortened-url bg-white w-100 py-3 rounded-3 text-start gap-0">
-      <p className="px-4 fs-6 fw-bolder mb-sm-0">{his.original.slice(0, 85)}</p>
+      <p className="px-4 fs-6 fw-bolder mb-sm-0">
+        {window.innerWidth < 1208 && his.original.length > 28
+          ? `${his.original.slice(0, 28)}...`
+          : his.original.slice(0, 85)}
+      </p>
       <div
-        className="px-4 pt-2  pt-sm-0 fs-6 fw-bolder d-sm-flex flex-sm-row gap-sm-5 align-items-sm-center"
+        className="px-4 pt-2  pt-sm-0 fs-6 fw-bolder d-sm-flex flex-sm-row gap-sm-1 gap-lg-5 align-items-sm-center"
         style={{
-          borderTop: `${window.innerWidth < 376 ? "1px solid #aaa" : "0"}`,
+          borderTop: `${window.innerWidth < 576 ? "1px solid #aaa" : "0"}`,
         }}
       >
         <a href={`${his.short}`} target="_blank">

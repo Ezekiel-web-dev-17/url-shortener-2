@@ -27,7 +27,7 @@ const Navbar = () => {
       <nav className="navbar d-flex justify-content-between align-items-center mx-sm-5">
         <img src={logo} height="35px" alt="logo" />
 
-        {window.innerWidth < 376 ? (
+        {window.innerWidth < 441 ? (
           <>
             <div
               className="nav-links flex-column justify-content-between align-items-center text-white fw-bold position-absolute rounded-3 fs-4 pb-4 pt-5 gap-3 px-4"
@@ -39,7 +39,7 @@ const Navbar = () => {
                 right: "8%",
               }}
             >
-              <ul className="d-flex flex-column text-center list-unstyled gap-4 fs-5">
+              <ul className="d-flex flex-column text-center list-unstyled gap-lg-4 gap-4 gap-sm-1 fs-5">
                 <li className="fw-bold opacity-50">Features</li>
                 <li className="fw-bold opacity-50">Pricing</li>
                 <li className="fw-bold opacity-50">Resources</li>
@@ -94,8 +94,12 @@ const Navbar = () => {
             </svg>
           </>
         ) : (
-          <div className="links d-flex justify-content-between align-items-center gap-5">
-            <ul className="link-all d-flex list-unstyled gap-5 mb-0">
+          <div
+            className={`${
+              window.innerWidth < 850 ? "" : "links"
+            } d-flex justify-content-between align-items-center gap-5`}
+          >
+            <ul className="link-all d-flex list-unstyled gap-5 gap-sm-3 gap-lg-5 mb-0">
               <li className=" opacity-50">Features</li>
               <li className=" opacity-50">Pricing</li>
               <li className=" opacity-50">Resources</li>

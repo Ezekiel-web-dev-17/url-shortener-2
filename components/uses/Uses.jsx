@@ -5,8 +5,8 @@ import fullyCustomizable from "../../src/assets/images/icon-fully-customizable.s
 
 const Uses = () => {
   return (
-    <div className="uses mt-sm-5 pt-sm-3">
-      <div className=" ms-sm-5">
+    <div className="uses mt-sm-0 mt-lg-5 pt-sm-0 pt-lg-3">
+      <div className=" ms-sm-3 ms-lg-5">
         <img src={brand} alt="brand-recognition icon" />
         <h3>Brand Recognition</h3>
         <p>

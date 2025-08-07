@@ -35,16 +35,6 @@ const Shorten = () => {
           const data = res.data;
           saveUrls(data);
         });
-
-      // await axios
-      //   .post("https://cleanuri.com/api/v1/shorten", {
-      //     url: `${longUrl.startsWith("www.") ? `https://${longUrl}` : longUrl}`,
-      //   })
-      //   .then((res) => {
-      //     const data = res.data;
-      //     saveUrls(data);
-      //   });
-
       setLongUrl("");
       setBtnContent("Shorten It!");
     } catch (error) {
@@ -106,11 +96,12 @@ const Shorten = () => {
         <button
           type="submit"
           id="shorten-btn"
-          className="btn text-white py-2 px-3 rounded-2 fw-bolder fs-5"
+          className="shorten-btn btn text-white py-2 px-3 rounded-2 fw-bolder fs-5"
           style={{
             backgroundColor: "var(--Cyan)",
             fontFamily: "Poppins, sans-serif",
-            width: `${window.innerWidth <= 376 ? "100%" : "25%"}`,
+            width: `${window.innerWidth <= 451 ? "100%" : "25%"}`,
+            textWrap: "nowrap",
           }}
         >
           {btnContent}
