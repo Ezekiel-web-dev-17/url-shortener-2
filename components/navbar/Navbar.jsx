@@ -24,14 +24,19 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="navbar d-flex justify-content-between align-items-center mx-sm-5">
+      <nav
+        className="navbar d-flex justify-content-between align-items-center mx-sm-5 position-fixed bg-white start-0 ms-sm-0 w-100 px-sm-5 px-3"
+        style={{
+          zIndex: "5",
+          top: "-12px",
+        }}
+      >
         <img src={logo} height="35px" alt="logo" />
 
         {window.innerWidth < 441 ? (
           <>
             <div
               className="nav-links flex-column justify-content-between align-items-center text-white fw-bold position-absolute rounded-3 fs-4 pb-4 pt-5 gap-3 px-4"
-              onClick={toggleMenu}
               style={{
                 backgroundColor: "var(--Dark-Violet)",
                 width: "85%",
@@ -99,7 +104,10 @@ const Navbar = () => {
               window.innerWidth < 850 ? "" : "links"
             } d-flex justify-content-between align-items-center gap-5`}
           >
-            <ul className="link-all d-flex list-unstyled gap-5 gap-sm-3 gap-lg-5 mb-0">
+            <ul
+              className="link-all d-flex list-unstyled gap-5 gap-sm-3 gap-lg-5 mb-0"
+              style={{ cursor: "not-allowed" }}
+            >
               <li className=" opacity-50">Features</li>
               <li className=" opacity-50">Pricing</li>
               <li className=" opacity-50">Resources</li>

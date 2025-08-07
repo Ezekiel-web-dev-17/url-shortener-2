@@ -2,7 +2,7 @@ import illustrationWorking from "../src/assets/images/illustration-working.svg";
 
 const Hero = () => {
   return (
-    <header className="hero mt-2 d-flex flex-sm-row-reverse flex-column gap-5 ps-sm-5 justify-content-sm-center align-items-sm-center mb-5 pb-4">
+    <header className="hero mt-5 pt-5 d-flex flex-sm-row-reverse flex-column gap-5 ps-sm-5 justify-content-sm-center align-items-sm-center mb-5 pb-4">
       <div className="hero-image w-100 ps-5 ps-sm-0">
         <img src={illustrationWorking} alt="illustration-working svg" />
       </div>
