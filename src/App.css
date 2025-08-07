@@ -195,6 +195,15 @@ footer {
   }
 }
 
+@media (max-width: 325px) {
+  .rule {
+    transform: rotate(90deg);
+    width: 750px;
+    margin-top: 600px;
+    margin-left: -220px;
+  }
+}
+
 @media (max-width: 375px) {
   .building {
     text-align: center;
