@@ -9,19 +9,19 @@ const Footer = () => {
     >
       <img className="mb-5 me-lg-5 pe-lg-5" src={whiteLogo} alt="" />
 
-      <ul className="opacity-50" aria-disabled="true">
+      <ul className="opacity-50 text-sm-start" aria-disabled="true">
         <li>Features</li>
         <li>Link Shortening</li>
         <li>Branded Links</li>
         <li>Analytics</li>
       </ul>
-      <ul className="opacity-50" aria-disabled="true">
+      <ul className="opacity-50 text-sm-start" aria-disabled="true">
         <li>Resources</li>
         <li>Blog</li>
         <li>Developers</li>
         <li>Support</li>
       </ul>
-      <ul className="opacity-50" aria-disabled="true">
+      <ul className="opacity-50 text-sm-start" aria-disabled="true">
         <li>Company</li>
         <li>About</li>
         <li>Our Team</li>
